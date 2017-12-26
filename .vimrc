@@ -17,9 +17,10 @@ set history=100         " keep 100 lines of history
 set ruler               " show the cursor position
 syntax on               " syntax highlighting
 set hlsearch            " highlight the last searched term
-set background=dark
+set background=dark	" use bright text color
 set laststatus=2	" set status line
-set nu
+set nu			" display line number
+set fileencodings=utf-8 " use UTF-8 as default encoding
 
 let g:solarized_termtrans = 1 " This gets rid of the grey background
 colorscheme solarized
