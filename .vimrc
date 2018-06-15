@@ -25,10 +25,14 @@ set laststatus=2	" set status line
 set nu			" display line number
 set fileencodings=utf-8 " use UTF-8 as default encoding
 set showmatch		" Cursor shows matching ) and }
+set cursorline
 
 let g:solarized_termtrans = 1 " This gets rid of the grey background
 colorscheme solarized
 let g:solarized_termcolors=256  
+
+" Set highlight for cursor line
+hi Cursorline term=bold cterm=bold guibg=grey40
 
 let g:airline_theme="solarized"
 let g:airline_solarized_bg='dark' " To use the solarized dark
