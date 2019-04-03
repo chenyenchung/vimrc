@@ -9,6 +9,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'lervag/vimtex'
+Plugin 'jalvesaq/Nvim-R'
 
 call vundle#end()
 
@@ -30,6 +33,7 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
+set tabstop=4		" tab = 4 spaces
 set ai                  " auto indenting 
 set history=100         " keep 100 lines of history
 set ruler               " show the cursor position
@@ -54,3 +58,18 @@ autocmd FileType text set spell
 autocmd FileType text set noshowmatch
 autocmd FileType text set wrap
 autocmd FileType text set linebreak
+
+" Filetype wiki
+autocmd FileType mediawiki set nonu
+autocmd FileType mediawiki set spell
+autocmd FileType mediawiki set linebreak
+autocmd FileType mediawiki set conceallevel=2
+autocmd FileType mediawiki syn match ref /<ref.\{-}<\/ref>/ conceal cchar=@
+
+" LaTex autocomplete
+let g:tex_flavor = "latex"
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
+
