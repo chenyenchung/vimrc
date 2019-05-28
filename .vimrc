@@ -34,6 +34,8 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
 set tabstop=4		" tab = 4 spaces
+set shiftwidth=4    " > with 4 spaces
+set expandtab		" expand tab as spaces
 set ai                  " auto indenting 
 set history=100         " keep 100 lines of history
 set ruler               " show the cursor position
