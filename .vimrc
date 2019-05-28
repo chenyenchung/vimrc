@@ -10,8 +10,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'lervag/vimtex'
-Plugin 'jalvesaq/Nvim-R'
 
 call vundle#end()
 
@@ -65,11 +63,4 @@ autocmd FileType mediawiki set spell
 autocmd FileType mediawiki set linebreak
 autocmd FileType mediawiki set conceallevel=2
 autocmd FileType mediawiki syn match ref /<ref.\{-}<\/ref>/ conceal cchar=@
-
-" LaTex autocomplete
-let g:tex_flavor = "latex"
-if !exists('g:ycm_semantic_triggers')
-  let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 
