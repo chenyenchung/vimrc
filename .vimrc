@@ -59,10 +59,3 @@ autocmd FileType text set noshowmatch
 autocmd FileType text set wrap
 autocmd FileType text set linebreak
 
-" Filetype wiki
-autocmd FileType mediawiki set nonu
-autocmd FileType mediawiki set spell
-autocmd FileType mediawiki set linebreak
-autocmd FileType mediawiki set conceallevel=2
-autocmd FileType mediawiki syn match ref /<ref.\{-}<\/ref>/ conceal cchar=@
-
