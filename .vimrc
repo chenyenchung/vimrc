@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+syntax enable
 
 " Vim-plug settings
 " Specify a directory for plugins
@@ -6,41 +7,34 @@ set nocompatible              " be iMproved, required
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
+Plug 'lifepillar/vim-solarized8'
 Plug 'luochen1990/rainbow'
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
-Plug 'altercation/vim-colors-solarized'
 
 " Initialize plugin system
 call plug#end()
 
 
 " Theme related
-set t_Co=256
-let g:solarized_termcolors=256 
-let g:solarized_termtrans=1 " This gets rid of the grey background
-colorscheme solarized
+set termguicolors
 set background=light	" use bright text color
+colorscheme solarized8_high
 
 " Lightline theme
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
-
-
-" Set highlight for cursor line
-hi Cursorline term=bold cterm=bold guibg=grey40
-
+ 
 " Set rainbow parenthesis
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
-
+ 
 " General settings
-syntax enable
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
-
+" 
 set tabstop=4		" tab = 4 spaces
 set shiftwidth=4    " > with 4 spaces
 set expandtab		" expand tab as spaces
