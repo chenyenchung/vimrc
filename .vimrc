@@ -1,6 +1,6 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
+" Vim-plug settings
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
@@ -10,15 +10,18 @@ Plug 'luochen1990/rainbow'
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
+Plug 'altercation/vim-colors-solarized'
 
 " Initialize plugin system
 call plug#end()
 
 
 " Theme related
-let g:solarized_termtrans = 1 " This gets rid of the grey background
+set t_Co=256
+let g:solarized_termcolors=256 
+let g:solarized_termtrans=1 " This gets rid of the grey background
 colorscheme solarized
-let g:solarized_termcolors=256  
+set background=light	" use bright text color
 
 " Lightline theme
 let g:lightline = {
@@ -33,7 +36,7 @@ hi Cursorline term=bold cterm=bold guibg=grey40
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 " General settings
-syntax on
+syntax enable
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
@@ -45,7 +48,6 @@ set ai                  " auto indenting
 set history=100         " keep 100 lines of history
 set ruler               " show the cursor position
 set hlsearch            " highlight the last searched term
-set background=dark	" use bright text color
 set laststatus=2	" set status line
 set number		" display line number
 set fileencodings=utf-8 " use UTF-8 as default encoding
