@@ -1,29 +1,36 @@
-" Vundle-related settings
 set nocompatible              " be iMproved, required
 filetype off                  " required
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Valloric/YouCompleteMe'
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-call vundle#end()
+Plug 'luochen1990/rainbow'
+Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'itchyny/lightline.vim'
+
+" Initialize plugin system
+call plug#end()
+
 
 " Theme related
 let g:solarized_termtrans = 1 " This gets rid of the grey background
 colorscheme solarized
 let g:solarized_termcolors=256  
 
+" Lightline theme
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
+
+
 " Set highlight for cursor line
 hi Cursorline term=bold cterm=bold guibg=grey40
 
-let g:airline_theme="solarized"
-let g:airline_solarized_bg='dark' " To use the solarized dark
-let g:airline_powerline_fonts = 1 " enable powerline fonts
+" Set rainbow parenthesis
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 " General settings
 syntax on
