@@ -12,6 +12,7 @@ Plug 'luochen1990/rainbow'
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
 
 " Initialize plugin system
 call plug#end()
